@@ -1,3 +1,4 @@
 resources:
+- apps.yml
 - argocd-notifications.yml
 - argocd.yml
