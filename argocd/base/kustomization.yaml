@@ -1,5 +1,7 @@
+namespace: argocd
 resources:
 - upstream/install.yaml
+- namespace.yml
 patchesStrategicMerge:
 - configmap.yml
 - deployment.yml
