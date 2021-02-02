@@ -1,4 +1,4 @@
-namespace: argocd-notifications
+namespace: argocd
 resources:
 - upstream/install.yaml
 - namespace.yml
