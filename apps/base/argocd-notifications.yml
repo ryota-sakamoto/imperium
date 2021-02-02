@@ -11,7 +11,7 @@ spec:
     path: argocd-notifications/base
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: argocd-notifications
   syncPolicy:
     automated:
       prune: true
