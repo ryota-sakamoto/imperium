@@ -2,3 +2,4 @@ resources:
 - upstream/install.yaml
 patchesStrategicMerge:
 - configmap.yml
+- deployment.yml
