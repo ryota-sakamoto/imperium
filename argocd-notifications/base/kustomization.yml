@@ -3,3 +3,4 @@ resources:
 - upstream/install.yaml
 patchesStrategicMerge:
 - upstream/catalog.yaml
+- secret.yml
