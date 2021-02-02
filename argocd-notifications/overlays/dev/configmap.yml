@@ -5,3 +5,4 @@ metadata:
 data:
   service.slack: |
     token: $slack-token
+    icon: ":face_with_rolling_eyes:"
