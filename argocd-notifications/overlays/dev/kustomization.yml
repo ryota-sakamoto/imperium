@@ -1,0 +1,6 @@
+namespace: argocd
+resources:
+- ../../base
+- sealedsecret.yml
+patchesStrategicMerge:
+- configmap.yml

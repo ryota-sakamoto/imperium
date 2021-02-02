@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ryota-sakamoto/imperium.git
     targetRevision: HEAD
-    path: argocd-notifications/base
+    path: argocd-notifications/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
