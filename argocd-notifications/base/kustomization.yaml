@@ -1,4 +1,6 @@
+namespace: argocd-notifications
 resources:
 - upstream/install.yaml
+- namespace.yml
 patchesStrategicMerge:
 - upstream/catalog.yaml
