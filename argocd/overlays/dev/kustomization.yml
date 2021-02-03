@@ -5,3 +5,4 @@ resources:
 - sealedsecret.yml
 patchesStrategicMerge:
 - configmap.yml
+- rbac.yml
