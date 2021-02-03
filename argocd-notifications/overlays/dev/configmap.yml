@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
 data:
+  context: |
+    argocdUrl: https://argocd.sakamo.dev
   service.slack: |
     token: $slack-token
     icon: ":face_with_rolling_eyes:"
