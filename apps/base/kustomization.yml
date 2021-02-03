@@ -2,4 +2,5 @@ resources:
 - apps.yml
 - argocd-notifications.yml
 - argocd.yml
+- ingress-nginx.yml
 - sealed-secrets.yml
