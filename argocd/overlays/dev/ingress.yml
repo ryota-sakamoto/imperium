@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: argocd-server
+spec:
+  rules:
+  - host: argocd.sakamo.dev
+    http:
+      paths:
+      - backend:
+          serviceName: argocd-server
+          servicePort: 80
