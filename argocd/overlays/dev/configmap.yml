@@ -4,3 +4,13 @@ metadata:
   name: argocd-cm
 data:
   url: https://argocd.sakamo.dev
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: 7471222a3fd8d3974850
+          clientSecret: $dex.github.clientSecret
+          orgs:
+          - name: parvae
