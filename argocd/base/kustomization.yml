@@ -5,3 +5,4 @@ resources:
 patchesStrategicMerge:
 - configmap.yml
 - deployment.yml
+- secret.yml

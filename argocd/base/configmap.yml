@@ -5,3 +5,4 @@ metadata:
 data:
   url: https://argo-cd-demo.argoproj.io
   statusbadge.enabled: 'true'
+  admin.enabled: "false"

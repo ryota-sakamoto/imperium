@@ -2,5 +2,6 @@ namespace: argocd
 resources:
 - ../../base
 - ingress.yml
+- sealedsecret.yml
 patchesStrategicMerge:
 - configmap.yml
