@@ -4,3 +4,5 @@ metadata:
   name: argocd-rbac-cm
 data:
   policy.default: role:readonly
+  policy.csv: |
+    g, parvae, role:admin
