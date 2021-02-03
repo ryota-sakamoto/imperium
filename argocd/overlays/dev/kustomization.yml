@@ -2,3 +2,5 @@ namespace: argocd
 resources:
 - ../../base
 - ingress.yml
+patchesStrategicMerge:
+- configmap.yml
