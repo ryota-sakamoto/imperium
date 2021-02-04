@@ -13,4 +13,3 @@ data:
           clientID: 7471222a3fd8d3974850
           clientSecret: $dex.github.clientSecret
           org: parvae
-          loadAllGroups: true
