@@ -12,5 +12,5 @@ data:
         config:
           clientID: 7471222a3fd8d3974850
           clientSecret: $dex.github.clientSecret
-          orgs:
-          - name: parvae
+          org: parvae
+          loadAllGroups: true
