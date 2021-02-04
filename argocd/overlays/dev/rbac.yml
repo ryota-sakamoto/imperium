@@ -5,5 +5,5 @@ metadata:
 data:
   policy.default: role:readonly
   policy.csv: |
-    g, ryota-sakamoto, role:admin
-  scopes: '[username]'
+    g, parvae/team, role:admin
+  # scopes: '[username]'
