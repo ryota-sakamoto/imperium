@@ -195,6 +195,10 @@ data:
           {{end}}
           ]
         }]
+    github:
+      state: pending
+      label: "continuous-delivery/{{.app.metadata.name}}"
+      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-succeeded: |
     email:
       subject: Application {{.app.metadata.name}} has been successfully synced.
