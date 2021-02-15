@@ -5,3 +5,7 @@ patchesStrategicMerge:
 - upstream/catalog.yaml
 - configmap.yml
 - secret.yml
+images:
+- name: argoprojlabs/argocd-notifications
+  newName: gcr.io/sakamo-dev/argocd-notifications@sha256
+  newTag: 7652839d3602999886a22c457401d5d5cca37e89cc4a6b171e08acb931d607a4
