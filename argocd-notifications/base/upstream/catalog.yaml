@@ -43,7 +43,7 @@ data:
       revision: "{{.app.status.sync.revision}}"
       state: success
       label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}"
+      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-health-degraded: |
     email:
       subject: Application {{.app.metadata.name}} has degraded.
@@ -83,7 +83,7 @@ data:
       revision: "{{.app.status.sync.revision}}"
       state: error
       label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}"
+      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-failed: |
     email:
       subject: Failed to sync application {{.app.metadata.name}}.
@@ -123,7 +123,7 @@ data:
       revision: "{{.app.status.sync.revision}}"
       state: error
       label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}"
+      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-running: |
     email:
       subject: Start syncing application {{.app.metadata.name}}.
@@ -163,7 +163,7 @@ data:
       revision: "{{.app.status.sync.revision}}"
       state: pending
       label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}"
+      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-status-unknown: |
     email:
       subject: Application {{.app.metadata.name}} sync status is 'Unknown'
@@ -216,7 +216,7 @@ data:
       revision: "{{.app.status.sync.revision}}"
       state: success
       label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}"
+      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   trigger.on-deployed: |
     - description: Application is synced and healthy. Triggered once per commit.
       oncePer: app.status.sync.revision
