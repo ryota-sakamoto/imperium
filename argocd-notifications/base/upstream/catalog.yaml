@@ -42,6 +42,42 @@ data:
       state: success
       label: "continuous-delivery/{{.app.metadata.name}}"
       targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
+    webhook:
+      mattermost:
+        method: POST
+        path: /api/v4/posts
+        body: |
+          [{
+            "title": "{{ .app.metadata.name}}",
+            "title_link":"{{.context.argocdUrl}}/applications/{{.app.metadata.name}}",
+            "color": "#18be52",
+            "fields": [
+            {
+              "title": "Sync Status",
+              "value": "{{.app.status.sync.status}}",
+              "short": true
+            },
+            {
+              "title": "Repository",
+              "value": "{{.app.spec.source.repoURL}}",
+              "short": true
+            },
+            {
+              "title": "Revision",
+              "value": "{{.app.status.sync.revision}}",
+              "short": true
+            }
+            {{range $index, $c := .app.status.conditions}}
+            {{if not $index}},{{end}}
+            {{if $index}},{{end}}
+            {
+              "title": "{{$c.type}}",
+              "value": "{{$c.message}}",
+              "short": true
+            }
+            {{end}}
+            ]
+          }]
   template.app-health-degraded: |
     email:
       subject: Application {{.app.metadata.name}} has degraded.
