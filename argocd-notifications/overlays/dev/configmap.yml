@@ -10,6 +10,5 @@ data:
     icon: ":face_with_rolling_eyes:"
   service.github: |
     appID: 100686
-    privateKey: |
-      $github-privateKey
+    privateKey: $github-privateKey
     installationID: 14747717
