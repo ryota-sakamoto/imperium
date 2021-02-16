@@ -4,7 +4,7 @@ resources:
 - sealedsecret.yml
 patchesStrategicMerge:
 - configmap.yml
-images:
-- name: argoprojlabs/argocd-notifications
-  newName: gcr.io/sakamo-dev/argocd-notifications@sha256
-  newTag: 0df446007332b069925957f18172355d599109dd2ef37731a96f6f4bcea3bcac
+# images:
+# - name: argoprojlabs/argocd-notifications
+#   newName: gcr.io/sakamo-dev/argocd-notifications@sha256
+#   newTag: 0df446007332b069925957f18172355d599109dd2ef37731a96f6f4bcea3bcac
