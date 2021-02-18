@@ -176,6 +176,11 @@ data:
             "title": "Repository",
             "value": "{{.app.spec.source.repoURL}}",
             "short": true
+          },
+          {
+            "title": "Commit",
+            "value": "{{(call .repo.GetCommitMetadata .app.status.sync.revision).Message}}",
+            "short": true
           }
           {{range $index, $c := .app.status.conditions}}
           {{if not $index}},{{end}}
