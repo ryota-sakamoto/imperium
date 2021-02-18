@@ -264,7 +264,7 @@ data:
             "short": true
           },
           {
-            "title": "Commit",
+            "title": "Commit_",
             "value": "{{(call .repo.GetCommitMetadata .app.status.sync.revision).Message}}",
             "short": true
           }
