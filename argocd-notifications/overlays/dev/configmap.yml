@@ -8,11 +8,6 @@ data:
   service.slack: |
     token: $slack-token
     icon: ":face_with_rolling_eyes:"
-  service.webhook.mattermost: |
-    url: https://sakamo.cloud.mattermost.com
-    headers:
-    - name: Authorization
-      value: Bearer $mattermost-token
   service.github: |
     appID: 100686
     privateKey: $github-privateKey

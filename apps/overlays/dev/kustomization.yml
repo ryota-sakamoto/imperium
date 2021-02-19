@@ -6,4 +6,3 @@ patchesStrategicMerge:
 commonAnnotations:
   notifications.argoproj.io/subscribe..slack: deploy_notifications
   notifications.argoproj.io/subscribe..github: ""
-  notifications.argoproj.io/subscribe..mattermost: ""
