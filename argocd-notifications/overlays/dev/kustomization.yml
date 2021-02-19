@@ -7,4 +7,4 @@ patchesStrategicMerge:
 images:
 - name: argoprojlabs/argocd-notifications
   newName: gcr.io/sakamo-dev/argocd-notifications@sha256
-  newTag: 6e7700de1245a9d947711d19b97886e4a842fef15b81a862b6c80eca81ff8f4a
+  newTag: 63843ba3b017a0d7e6bb321a28224bce3d8e0646e83b39ac1c980ab7ec176aa6
