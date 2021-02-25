@@ -38,10 +38,6 @@ data:
           {{end}}
           ]
         }]
-    github:
-      state: success
-      label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-health-degraded: |
     email:
       subject: Application {{.app.metadata.name}} has degraded.
@@ -76,10 +72,6 @@ data:
           {{end}}
           ]
         }]
-    github:
-      state: error
-      label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-failed: |
     email:
       subject: Failed to sync application {{.app.metadata.name}}.
@@ -114,10 +106,6 @@ data:
           {{end}}
           ]
         }]
-    github:
-      state: error
-      label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-running: |
     email:
       subject: Start syncing application {{.app.metadata.name}}.
@@ -140,11 +128,6 @@ data:
             "title": "Repository",
             "value": "{{.app.spec.source.repoURL}}",
             "short": true
-          },
-          {
-            "title": "Commit",
-            "value": "{{(call .repo.GetCommitMetadata .app.status.sync.revision).Message}}",
-            "short": true
           }
           {{range $index, $c := .app.status.conditions}}
           {{if not $index}},{{end}}
@@ -157,10 +140,6 @@ data:
           {{end}}
           ]
         }]
-    github:
-      state: pending
-      label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-status-unknown: |
     email:
       subject: Application {{.app.metadata.name}} sync status is 'Unknown'
@@ -200,10 +179,6 @@ data:
           {{end}}
           ]
         }]
-    github:
-      state: pending
-      label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-sync-succeeded: |
     email:
       subject: Application {{.app.metadata.name}} has been successfully synced.
@@ -211,42 +186,7 @@ data:
       {{if eq .serviceType "slack"}}:white_check_mark:{{end}} Application {{.app.metadata.name}} has been successfully synced at {{.app.status.operationState.finishedAt}}.
       Sync operation details are available at: {{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true .
     slack:
-      attachments: |
-        [{
-          "title": "{{ .app.metadata.name}}",
-          "title_link":"{{.context.argocdUrl}}/applications/{{.app.metadata.name}}",
-          "color": "#18be52",
-          "fields": [
-          {
-            "title": "Sync Status",
-            "value": "{{.app.status.sync.status}}",
-            "short": true
-          },
-          {
-            "title": "Repository",
-            "value": "{{.app.spec.source.repoURL}}",
-            "short": true
-          },
-          {
-            "title": "Commit_",
-            "value": "{{(call .repo.GetCommitMetadata .app.status.sync.revision).Message}}",
-            "short": true
-          }
-          {{range $index, $c := .app.status.conditions}}
-          {{if not $index}},{{end}}
-          {{if $index}},{{end}}
-          {
-            "title": "{{$c.type}}",
-            "value": "{{$c.message}}",
-            "short": true
-          }
-          {{end}}
-          ]
-        }]
-    github:
-      state: success
-      label: "continuous-delivery/{{.app.metadata.name}}"
-      targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
+      attachments: "[{\n  \"title\": \"{{ .app.metadata.name}}\",\n  \"title_link\":\"{{.context.argocdUrl}}/applications/{{.app.metadata.name}}\",\n  \"color\": \"#18be52\",\n  \"fields\": [\n  {\n    \"title\": \"Sync Status\",\n    \"value\": \"{{.app.status.sync.status}}\",\n    \"short\": true\n  },\n  {\n    \"title\": \"Repository\",\n    \"value\": \"{{.app.spec.source.repoURL}}\",\n    \"short\": true\n  }\n  {{range $index, $c := .app.status.conditions}}\n  {{if not $index}},{{end}}\n  {{if $index}},{{end}}\n  {\n    \"title\": \"{{$c.type}}\",\n    \"value\": \"{{$c.message}}\",\n    \"short\": true\n  }\n  {{end}}\n  ]\n}]    "
   trigger.on-deployed: |
     - description: Application is synced and healthy. Triggered once per commit.
       oncePer: app.status.sync.revision

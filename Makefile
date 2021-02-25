@@ -8,5 +8,5 @@ argocd:
 
 .PHONY: notifications
 notifications:
-	curl https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/release-1.0/manifests/install.yaml -o argocd-notifications/base/upstream/install.yaml
-	curl https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/release-1.0/catalog/install.yaml -o argocd-notifications/base/upstream/catalog.yaml
+	curl https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/v1.0.2/manifests/install.yaml -o argocd-notifications/base/upstream/install.yaml
+	curl https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/v1.0.2/catalog/install.yaml -o argocd-notifications/base/upstream/catalog.yaml
