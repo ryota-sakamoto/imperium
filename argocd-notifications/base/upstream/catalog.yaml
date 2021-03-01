@@ -145,6 +145,8 @@ data:
           {{end}}
           ]
         }]
+    github:
+      hoge: panic
   template.app-sync-status-unknown: |
     email:
       subject: Application {{.app.metadata.name}} sync status is 'Unknown'
