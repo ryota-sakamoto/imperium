@@ -38,6 +38,11 @@ data:
           {{end}}
           ]
         }]
+    github:
+      status:
+        state: success
+        label: "continuous-delivery/{{.app.metadata.name}}"
+        targetURL: "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}?operation=true"
   template.app-health-degraded: |
     email:
       subject: Application {{.app.metadata.name}} has degraded.
