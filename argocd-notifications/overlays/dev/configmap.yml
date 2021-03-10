@@ -12,3 +12,5 @@ data:
     appID: 100686
     privateKey: $github-privateKey
     installationID: 14747717
+  service.telegram: |
+    token: $telegram-token
