@@ -21,20 +21,20 @@ rules:
   - patch
 - apiGroups:
   - ""
-  resources:
-  - configmaps
   resourceNames:
   - argocd-notifications-cm
+  resources:
+  - configmaps
   verbs:
   - get
   - list
   - watch
 - apiGroups:
   - ""
-  resources:
-  - secrets
   resourceNames:
   - argocd-notifications-secret
+  resources:
+  - secrets
   verbs:
   - get
   - list
