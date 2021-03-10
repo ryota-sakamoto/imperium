@@ -22,11 +22,20 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - secrets
   - configmaps
+  resourceNames:
+  - argocd-notifications-cm
   verbs:
   - get
-  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  resourceNames:
+  - argocd-notifications-secret
+  verbs:
+  - get
   - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
