@@ -404,8 +404,7 @@ data:
           {{if $index}},{{end}}
           {
             "title": "{{$c.group}}{{if $c.group}}/{{end}}{{$c.version}} {{$c.kind}}",
-            "value": "{{$c.name}}",
-            "short": true
+            "value": "{{$c.name}}"
           }
           {{end}}
           ]
