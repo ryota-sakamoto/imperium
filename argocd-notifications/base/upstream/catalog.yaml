@@ -403,7 +403,7 @@ data:
           {{if not $index}},{{end}}
           {{if $index}},{{end}}
           {
-            "title": "{{$c.kind}}",
+            "title": "{{$c.group}}/{{$c.apiVersion}} {{$c.kind}}",
             "value": "{{$c.name}}"
           }
           {{end}}
