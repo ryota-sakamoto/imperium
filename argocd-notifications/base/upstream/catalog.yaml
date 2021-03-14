@@ -26,6 +26,11 @@ data:
             "title": "Revision",
             "value": "{{.app.status.sync.revision}}",
             "short": true
+          },
+          {
+            "title": "channel",
+            "value": "{{index . "app" "metadata" "annotations" "notifications.argoproj.io/subscribe.slack"}}",
+            "short": true
           }
           {{range $index, $c := .app.status.conditions}}
           {{if not $index}},{{end}}
