@@ -3,14 +3,31 @@ kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
 data:
-  context: |
-    argocdUrl: https://argocd.sakamo.dev
-  service.slack: |
-    token: $slack-token
-    icon: ":face_with_rolling_eyes:"
-  service.github: |
-    appID: 100686
-    privateKey: $github-privateKey
-    installationID: 14747717
-  service.telegram: |
-    token: $telegram-token
+  # context: |
+  #   argocdUrl: https://argocd.sakamo.dev
+  # service.slack: |
+  #   token: $slack-token
+  #   icon: ":face_with_rolling_eyes:"
+  # service.github: |
+  #   appID: 100686
+  #   privateKey: $github-privateKey
+  #   installationID: 14747717
+  # service.telegram: |
+  #   token: $telegram-token
+  config.yaml: |
+    context:
+      argocdUrl: https://argocd.sakamo.dev
+    subscriptions:
+      - recipients:
+        - slack:deploy_notifications
+    templates:
+      []
+    triggers:
+      - name: on-sync-succeeded
+        enabled: true
+      - name: on-sync-failed
+        enabled: true
+      - name: on-sync-status-unknown
+        enabled: true
+      - name: on-health-degraded
+        enabled: true
