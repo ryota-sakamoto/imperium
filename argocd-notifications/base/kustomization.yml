@@ -2,6 +2,6 @@ namespace: argocd
 resources:
 - upstream/install.yaml
 patchesStrategicMerge:
-# - upstream/catalog.yaml
-# - configmap.yml
+- upstream/catalog.yaml
+- configmap.yml
 - secret.yml
