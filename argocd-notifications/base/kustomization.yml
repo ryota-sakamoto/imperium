@@ -3,5 +3,5 @@ resources:
 - upstream/install.yaml
 patchesStrategicMerge:
 # - upstream/catalog.yaml
-- configmap.yml
+# - configmap.yml
 - secret.yml
