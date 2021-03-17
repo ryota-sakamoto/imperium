@@ -5,5 +5,5 @@ patchesStrategicMerge:
 - argocd.yml
 commonAnnotations:
   notifications.argoproj.io/subscribe.slack: deploy_notifications
-  notifications.argoproj.io/subscribe.mattermost: deploy_notifications
+  notifications.argoproj.io/subscribe.mattermost: j4imsmma9fnhjfdxch4ed94eda
   notifications.argoproj.io/subscribe.telegram: "-1001180037045"
