@@ -414,6 +414,33 @@ data:
           {{end}}
           ]
         }]
+    mattermost:
+      attachments: |
+        [{
+          "title": "{{ .app.metadata.name}}",
+          "title_link":"{{.context.argocdUrl}}/applications/{{.app.metadata.name}}",
+          "color": "#18be52",
+          "fields": [
+          {
+            "title": "Sync Status",
+            "value": "{{.app.status.sync.status}}",
+            "short": true
+          },
+          {
+            "title": "Repository",
+            "value": "{{.app.spec.source.repoURL}}",
+            "short": true
+          }
+          {{range $index, $c := .app.status.operationState.syncResult.resources}}
+          {{if not $index}},{{end}}
+          {{if $index}},{{end}}
+          {
+            "title": "{{$c.group}}{{if $c.group}}/{{end}}{{$c.version}} {{$c.kind}}",
+            "value": "{{$c.name}}"
+          }
+          {{end}}
+          ]
+        }]
     teams:
       facts: |
         [{
