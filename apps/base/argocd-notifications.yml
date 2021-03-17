@@ -5,7 +5,6 @@ metadata:
   namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe..github: ""
-    recipients.argocd-notifications.argoproj.io: slack:deploy_notifications
 spec:
   project: default
   source:
