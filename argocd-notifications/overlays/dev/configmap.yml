@@ -9,6 +9,7 @@ data:
     token: $slack-token
     icon: ":face_with_rolling_eyes:"
   service.mattermost: |
+    apiURL: https://sakamo.cloud.mattermost.com/
     token: $mattermost-token
     icon: ":face_with_rolling_eyes:"
   service.github: |
